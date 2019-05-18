@@ -1,0 +1,336 @@
+{
+  "Variables": [
+    {
+      "name": "50",
+      "value": "50",
+      "type": "NUMBER"
+    },
+    {
+      "name": "Trade",
+      "value": "Trade",
+      "type": "ACTION"
+    },
+    {
+      "name": "20",
+      "value": "20",
+      "type": "NUMBER"
+    },
+    {
+      "name": "Close",
+      "value": "True",
+      "type": "BOOL"
+    },
+    {
+      "name": "Is Open",
+      "value": "Is Open",
+      "type": "STRING"
+    },
+    {
+      "name": "1",
+      "value": "1",
+      "type": "NUMBER"
+    },
+    {
+      "name": "Item 2 name here",
+      "value": "Item 2 name here",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "Item 1 name here",
+      "value": "Item 1 name here",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "Item 3 name here",
+      "value": "Item 3 name here",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "NPC name here",
+      "value": "NPC name here",
+      "type": "NPC"
+    }
+  ],
+  "NodeCollection": [
+    {
+      "name": "StartCondition",
+      "base": {
+        "id": "d1c18fcf-f19e-40b8-af90-be20a9529236",
+        "position": {
+          "x": "-623.0",
+          "y": "-403.0"
+        },
+        "flowTasks": {
+          "success": "f4a3e852-8d74-44b1-81a5-38355fc68a09"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "GameMode": "OSRS",
+        "IntervalLow": 858.1411502674227,
+        "IntervalHigh": 1215.7402800711423
+      }
+    },
+    {
+      "name": "ShopCondition",
+      "base": {
+        "id": "f4a3e852-8d74-44b1-81a5-38355fc68a09",
+        "position": {
+          "x": "-477.0",
+          "y": "112.0"
+        },
+        "flowTasks": {
+          "success": "0f54b92c-0919-44eb-b697-0c93cc65c44f",
+          "failure": "23bf31c2-dc91-42e6-9709-97af3257c8bb"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "ItemValues": [],
+        "ItemRegex": false,
+        "Quantity": "",
+        "Condition": "Is Open"
+      }
+    },
+    {
+      "name": "ShopAction",
+      "base": {
+        "id": "6d21bf3a-2db0-4742-895f-ad4eabf38215",
+        "position": {
+          "x": "461.0",
+          "y": "-279.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "ItemValues": [
+          "Item 1 name here"
+        ],
+        "ItemRegex": false,
+        "Condition": "Buy",
+        "Type": "50",
+        "QRegex": true
+      }
+    },
+    {
+      "name": "InteractionAction",
+      "base": {
+        "id": "ed200a6f-5ce6-465a-8647-a4227b6eed3b",
+        "position": {
+          "x": "381.0",
+          "y": "604.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "list4": [
+            "Trade"
+          ],
+          "within": "",
+          "type": "NpcQuery"
+        }
+      },
+      "variables": {
+        "Condition": "Npc",
+        "ItemValues": [
+          "NPC name here"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Trade"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "ShopCondition",
+      "base": {
+        "id": "0f54b92c-0919-44eb-b697-0c93cc65c44f",
+        "position": {
+          "x": "-46.0",
+          "y": "-239.0"
+        },
+        "flowTasks": {
+          "success": "6d21bf3a-2db0-4742-895f-ad4eabf38215",
+          "failure": "5c6282f5-790d-4d35-ad05-2088ed771a5b"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "ItemValues": [
+          "Item 1 name here"
+        ],
+        "ItemRegex": true,
+        "Quantity": "1",
+        "Condition": "Has in stock:"
+      }
+    },
+    {
+      "name": "WorldHopAction",
+      "base": {
+        "id": "62608410-904a-4388-bb6a-6bf1b06c89de",
+        "position": {
+          "x": "377.0",
+          "y": "922.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "WhiteValue": [
+          "MembersOnly"
+        ],
+        "BlackValue": [
+          "F2P Only",
+          "LootShare",
+          "Tournament",
+          "HighRisk",
+          "LastManStanding",
+          "PVP",
+          "Deadman mode",
+          "Bounty",
+          "SkillTotal1250",
+          "SkillTotal1500",
+          "SkillTotal1750",
+          "SkillTotal2000",
+          "SkillTotal2200"
+        ],
+        "Condition": "Next"
+      }
+    },
+    {
+      "name": "ShopAction",
+      "base": {
+        "id": "a34c5de3-4e31-40c6-9665-a249b335dabc",
+        "position": {
+          "x": "971.0",
+          "y": "625.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "ItemValues": [],
+        "ItemRegex": false,
+        "Condition": "Close",
+        "Type": "",
+        "QRegex": false
+      }
+    },
+    {
+      "name": "RandomModulator",
+      "base": {
+        "id": "23bf31c2-dc91-42e6-9709-97af3257c8bb",
+        "position": {
+          "x": "-57.0",
+          "y": "534.0"
+        },
+        "flowTasks": {
+          "success": "ed200a6f-5ce6-465a-8647-a4227b6eed3b",
+          "failure": "62608410-904a-4388-bb6a-6bf1b06c89de"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "IntervalLow": 59.73195374220309,
+        "IntervalHigh": 100.0
+      }
+    },
+    {
+      "name": "ShopCondition",
+      "base": {
+        "id": "5c6282f5-790d-4d35-ad05-2088ed771a5b",
+        "position": {
+          "x": "294.0",
+          "y": "67.0"
+        },
+        "flowTasks": {
+          "success": "8010dd1d-d0d0-4cd2-8316-cff634b6329b",
+          "failure": "92e915b9-2945-453d-86db-c606c717561d"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "ItemValues": [
+          "Item 2 name here"
+        ],
+        "ItemRegex": true,
+        "Quantity": "1",
+        "Condition": "Has in stock:"
+      }
+    },
+    {
+      "name": "ShopCondition",
+      "base": {
+        "id": "92e915b9-2945-453d-86db-c606c717561d",
+        "position": {
+          "x": "632.0",
+          "y": "352.0"
+        },
+        "flowTasks": {
+          "success": "3cf4c745-66a1-484e-b7e5-0a8067150370",
+          "failure": "a34c5de3-4e31-40c6-9665-a249b335dabc"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "ItemValues": [
+          "Item 3 name here"
+        ],
+        "ItemRegex": true,
+        "Quantity": "1",
+        "Condition": "Has in stock:"
+      }
+    },
+    {
+      "name": "ShopAction",
+      "base": {
+        "id": "8010dd1d-d0d0-4cd2-8316-cff634b6329b",
+        "position": {
+          "x": "742.0",
+          "y": "27.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "ItemValues": [
+          "Item 2 name here"
+        ],
+        "ItemRegex": true,
+        "Condition": "Buy",
+        "Type": "50",
+        "QRegex": true
+      }
+    },
+    {
+      "name": "ShopAction",
+      "base": {
+        "id": "3cf4c745-66a1-484e-b7e5-0a8067150370",
+        "position": {
+          "x": "1093.0",
+          "y": "311.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "ItemValues": [
+          "Item 3 name here"
+        ],
+        "ItemRegex": true,
+        "Condition": "Buy",
+        "Type": "50",
+        "QRegex": true
+      }
+    }
+  ],
+  "BotCategory": "OTHER",
+  "inventoryData": {},
+  "internalData": {
+    "Mouse multiplier": 10.0,
+    "Mouse path": "HOPPING_PATH_GENERATOR",
+    "Disable advanced": true
+  }
+}
